@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
+    <title>Encriptador Manfred</title>
+    <link rel="icon" href="imagenes/icons8-candado-104.png">
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    
+    <main class="cuerpo">
+        <header class="cabeza">
+            <img class="cabeza_logo" src="imagenes/Logo.png" alt="Logo de alura">
+            <p class="cabeza__titulo">Encriptador de texto</p>
+            
+        </header>
+        <section class="izquierda">
+            <textarea class="text-area" cols="30" rows="10"  placeholder="Ingrese el texto aqui"></textarea>
+            <div class="informacion_class">
+                <img class="exclamacion" src="imagenes/bi_exclamation-circle-fill.png" alt="exclamacion">
+                <h6 class="informacion" >Solo letras minúsculas y sin acentos </h6>
+               
+            </div>
+            <div class="botones">
+                <button class="btn-encriptar" onclick="btnEncriptar()">Encriptar</button>
+                <button class="btn-desencriptar" onclick="btnDesencriptar()">Desencriptar</button>
+            </div>
+        </section>
+        <section class="derecha">
+            <textarea class="mensaje" cols="20" rows="10" id="myInput"></textarea>
+            <div class="container">
+                
+                <button class="Copiar" onclick="copyText()">Copiar</button>
+
+            </div>
+        </section>
+        <footer class="pies">
+            <img class="pie_imagen" src="imagenes/logo_pie.png" alt="muñeco">
+            <p class = "tex-pies">Desarrollado por Manfred Hamann Borrero</p>
+        </footer>
+    </main>
+   
+    <script src="script.js"></script>
+    <script>
+        function copyText(){
+            let inputText = document.getElementById("myInput");
+
+            inputText.select();
+            inputText.setSelectionRange(0, 99999);
+
+            navigator.clipboard.writeText(inputText.value);
+            alert("texto copiado:" + inputText.value);
+
+        }
+    </script>
+</body>
+</html>
